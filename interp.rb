@@ -1,6 +1,5 @@
 require "minruby"
 
-tree = minruby_parse("1 + 2 * 4")
 
 def evaluate(tree)
   case tree[0]
@@ -25,4 +24,7 @@ def evaluate(tree)
   end
 end
 
-p evaluate(tree)
+str = minruby_load
+tree = minruby_parse(str)
+answer = evaluate(tree)
+puts answer
